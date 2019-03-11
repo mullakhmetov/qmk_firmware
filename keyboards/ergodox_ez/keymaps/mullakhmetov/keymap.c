@@ -1,6 +1,55 @@
 #include QMK_KEYBOARD_H
 
+#define BASE 0 // default layer
+#define SYMB 1 // symbol
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-	[0] = LAYOUT_ergodox(KC_GRV, KC_1, KC_2, KC_3, KC_4, KC_5, KC_BSLS, KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_HOME, KC_LCTL, KC_A, KC_S, KC_D, KC_F, KC_G, KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_END, LT(1,KC_NO), KC_APP, KC_CAPS, KC_LALT, KC_LGUI, KC_NO, KC_MUTE, KC_VOLU, KC_SPC, KC_BSPC, KC_VOLD, KC_MINS, KC_6, KC_7, KC_8, KC_9, KC_0, KC_EQL, KC_PGUP, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_LBRC, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_RBRC, KC_PGDN, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_QUOT, KC_LEFT, KC_UP, KC_DOWN, KC_RGHT, KC_ENT, KC_MPLY, KC_NO, KC_MFFD, KC_MRWD, KC_DEL, KC_ENT),
-	[1] = LAYOUT_ergodox(KC_ESC, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_NO, KC_NO, KC_NO, KC_LPRN, KC_RPRN, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_LCBR, KC_RCBR, KC_NO, KC_NO, KC_NO, KC_NO, KC_LT, KC_GT, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12, KC_NO, KC_NO, KC_P7, KC_P8, KC_P9, KC_PPLS, KC_NO, KC_NO, KC_P4, KC_P5, KC_P6, KC_PMNS, KC_NO, KC_NO, KC_NO, KC_P1, KC_P2, KC_P3, KC_PEQL, KC_NO, KC_NO, KC_P0, KC_PDOT, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO)
+  [BASE] = LAYOUT_ergodox( // base layer
+    // left hand
+    KC_GRV,         KC_1,   KC_2,    KC_3,    KC_4,    KC_5,    KC_BSLS,
+    KC_TAB,         KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,    KC_HOME,
+    KC_LCTL,        KC_A,   KC_S,    KC_D,    KC_F,    KC_G,
+    KC_LSFT,        KC_Z,   KC_X,    KC_C,    KC_V,    KC_B,    KC_END,
+    LT(SYMB,KC_NO), KC_APP, KC_CAPS, KC_LALT, KC_LGUI,
+
+                                                  // left thumb cluster
+                                                         KC_NO, KC_MUTE,
+                                                                KC_VOLU,
+                                               KC_SPC, KC_BSPC, KC_VOLD,
+    // right hand
+    KC_MINS, KC_6,  KC_7,    KC_8,    KC_9,    KC_0,                 KC_EQL,
+    KC_PGUP, KC_Y,  KC_U,    KC_I,    KC_O,    KC_P,                 KC_LBRC,
+    KC_H,    KC_J,  KC_K,    KC_L,    KC_SCLN, MT(MOD_RCTL,KC_RBRC),
+    KC_PGDN, KC_N,  KC_M,    KC_COMM, KC_DOT,  KC_SLSH,              MT(MOD_RSFT,KC_QUOT),
+    KC_LEFT, KC_UP, KC_DOWN, KC_RGHT, KC_ENT,
+
+    // right thumb cluster
+    KC_MPLY, KC_NO,
+    KC_MFFD,
+    KC_MRWD, KC_DEL, KC_ENT
+  ),
+  [SYMB] = LAYOUT_ergodox( // symbols layer
+    // left hand
+    KC_ESC, KC_F1, KC_F2, KC_F3,   KC_F4,   KC_F5, KC_F6,
+    KC_NO,  KC_NO, KC_NO, KC_LPRN, KC_RPRN, KC_NO, KC_NO,
+    KC_NO,  KC_NO, KC_NO, KC_LCBR, KC_RCBR, KC_NO,
+    KC_NO,  KC_NO, KC_NO, KC_LT,   KC_GT,   KC_NO, KC_NO,
+    KC_NO,  KC_NO, KC_NO, KC_NO,   KC_NO,
+
+                                      /left thumb cluster
+                                           KC_NO,  KC_NO,
+                                                   KC_NO,
+                                     KC_NO, KC_NO, KC_NO,
+    // right hand
+    KC_F7, KC_F8,   KC_F9, KC_F10,  KC_F11, KC_F12, KC_NO,
+    KC_NO, KC_P7,   KC_P8, KC_P9,   KC_PPLS, KC_NO, KC_NO,
+    KC_P4, KC_P5,   KC_P6, KC_PMNS, KC_NO, KC_NO,
+    KC_NO, KC_P1,   KC_P2, KC_P3,   KC_PEQL, KC_NO, KC_NO,
+    KC_P0, KC_PDOT, KC_NO, KC_NO,   KC_NO,
+
+    // right thumb cluster
+    KC_NO, KC_NO,
+    KC_NO,
+    KC_NO, KC_NO, KC_NO
+  )
 };
