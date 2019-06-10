@@ -19,7 +19,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     * |--------+------+------+------+------+------| END  |           |PGDown|------+------+------+------+------+--------|
     * | LSFT   |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |  ,<  |  .>  |  /?  | '" RSFT|
     * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
-    *   |  `~  |      | Caps | LAlt |  cmd |                                       |  Up  | Down | Left |Right |Enter |
+    *   |  `~  |      | Caps | LAlt |  cmd |                                       |  -_  |      |      |      |      |
     *   `----------------------------------'                                       `----------------------------------'
     *                                        ,-------------.       ,---------------.
     *                                        |      | Mute |       | Play |Ctrl/Esc|
@@ -45,7 +45,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_PGUP, KC_Y,  KC_U,    KC_I,    KC_O,    KC_P,                 KC_LBRC,
     KC_H,    KC_J,  KC_K,    KC_L,    KC_SCLN, MT(MOD_RCTL,KC_RBRC),
     KC_PGDN, KC_N,  KC_M,    KC_COMM, KC_DOT,  KC_SLSH,              MT(MOD_RSFT,KC_QUOT),
-    KC_LEFT, KC_UP, KC_DOWN, KC_RGHT, KC_ENT,
+    KC_MINS, KC_NO, KC_NO,   KC_NO,   KC_NO,
 
     // right thumb cluster
     KC_MPLY, KC_NO,
@@ -58,13 +58,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     * ,--------------------------------------------------.           ,--------------------------------------------------.
     * |   ESC  |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |           |  F7  |  F8  |  F9  |  F10 |  F11 |  F12 |        |
     * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
-    * |        |      |      |      |      |      |      |           |      |      |  7   |  8   |  9   |  +   |        |
+    * |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        |
     * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
-    * |        |      |      |      |      |      |------|           |------|      |  4   |  5   |  6   |  -   |        |
+    * |        |      |      |      |      |      |------|           |------|      | Left |  Up  | Down |Right |        |
     * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
-    * |  LSFT  |      |      |      |      |      |      |           |      |      |  1   |  2   |  3   |  =   |        |
+    * |  LSFT  |      |      |      |      |      |      |           |      |      |      |      |      |      |        |
     * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
-    *   |      |      |      |      |      |                                       |      |  0   |  .   |      |      |
+    *   |      |      |      |      |      |                                       |      |      |      |      |      |
     *   `----------------------------------'                                       `----------------------------------'
     *                                        ,-------------.       ,-------------.
     *                                        |      |      |       |      |      |
@@ -86,11 +86,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                    KC_NO,
                                      KC_NO, KC_NO, KC_NO,
     // right hand
-    KC_F7, KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_NO,
-    KC_NO, KC_NO,   KC_P7,   KC_P8,   KC_P9,   KC_PPLS, KC_NO,
-    KC_NO, KC_P4,   KC_P5,   KC_P6,   KC_PMNS, KC_NO,
-    KC_NO, KC_NO,   KC_P1,   KC_P2,   KC_P3,   KC_PEQL, KC_NO,
-    KC_NO, KC_P0,   KC_PDOT, KC_NO,   KC_NO,
+    KC_F7, KC_F8,   KC_F9,   KC_F10,  KC_F11,   KC_F12,  KC_NO,
+    KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_NO,   KC_NO,
+    KC_NO, KC_LEFT, KC_UP,   KC_DOWN, KC_RIGHT, KC_NO,
+    KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_NO,   KC_NO,
+    KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,
 
     // right thumb cluster
     KC_NO, KC_NO,
