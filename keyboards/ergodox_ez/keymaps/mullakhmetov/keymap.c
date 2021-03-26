@@ -25,21 +25,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     *                                        |      | Mute |       | Play |        |
     *                                 ,------|------|------|       |------+--------+------.
     *                                 |      |      | Vol+ |       | Next |        |      |
-    *                                 | Space|  L1  |------|       |------|        |Enter |
+    *                                 | Space| \SYMB|------|       |------|  SYMB  |Enter |
     *                                 |      |      | Vol- |       | Prev |        |      |
     *                                 `--------------------'       `----------------------'
     */
     // left hand
-    KC_GRV,        KC_1,   KC_2,    KC_3,    KC_4,    KC_5, KC_BSLS,
-    KC_TAB,        KC_Q,   KC_W,    KC_E,    KC_R,    KC_T, KC_HOME,
-    KC_LCTL,       KC_A,   KC_S,    KC_D,    KC_F,    KC_G,
-    OSM(MOD_LSFT), KC_Z,   KC_X,    KC_C,    KC_V,    KC_B, KC_END,
-    KC_GRV,        KC_NO,  KC_CAPS, KC_LALT, KC_LGUI,
+    KC_NONUS_BSLASH, KC_1,   KC_2,    KC_3,    KC_4,    KC_5, KC_BSLS,
+    KC_TAB,          KC_Q,   KC_W,    KC_E,    KC_R,    KC_T, KC_HOME,
+    KC_LCTL,         KC_A,   KC_S,    KC_D,    KC_F,    KC_G,
+    OSM(MOD_LSFT),   KC_Z,   KC_X,    KC_C,    KC_V,    KC_B, KC_END,
+    KC_GRV,          KC_NO,  KC_CAPS, KC_LALT, KC_LGUI,
 
                                                   // left thumb cluster
-                                                                   KC_NO, KC_MUTE,
-                                                                          KC_VOLU,
-                                                            KC_SPC, SYMB, KC_VOLD,
+                                                                       KC_NO, KC_MUTE,
+                                                                              KC_VOLU,
+                                                     KC_SPC, LT(SYMB, KC_NO), KC_VOLD,
     // right hand
     KC_MINS, KC_6,    KC_7,  KC_8,    KC_9,    KC_0,    KC_EQL,
     KC_PGUP, KC_Y,    KC_U,  KC_I,    KC_O,    KC_P,    KC_LBRC,
@@ -50,7 +50,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // right thumb cluster
     KC_MPLY, KC_NO,
     KC_MFFD,
-    KC_MRWD, KC_NO, KC_ENT
+    KC_MRWD, TO(SYMB), KC_ENT
   ),
   [SYMB] = LAYOUT_ergodox(
     /* Symbols layer
@@ -70,7 +70,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     *                                        |      |      |       |      |      |
     *                                 ,------|------|------|       |------+------+------.
     *                                 |      |      |      |       |      |      |      |
-    *                                 |      |      |------|       |------|      |      |
+    *                                 |      | BASE |------|       |------|      |Enter |
     *                                 |      |      |      |       |      |      |      |
     *                                 `--------------------'       `--------------------'
     */
@@ -84,7 +84,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                     // left thumb cluster
                                            KC_NO,  KC_NO,
                                                    KC_NO,
-                                     KC_NO, KC_NO, KC_NO,
+                                  KC_NO, TO(BASE), KC_NO,
     // right hand
     KC_F7,   KC_F8,   KC_F9,   KC_F10,   KC_F11, KC_F12,  KC_NO,
     KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_NO,  KC_NO,   KC_NO,
@@ -95,6 +95,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // right thumb cluster
     KC_NO, KC_NO,
     KC_NO,
-    KC_NO, KC_NO, KC_NO
+    KC_NO, KC_NO, KC_ENT
   )
 };
